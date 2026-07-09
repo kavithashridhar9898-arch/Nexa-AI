@@ -2,6 +2,10 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/api/auth/(.*)",
+      "destination": "/api/auth"
+    },
+    {
       "source": "/api/notifications/mark-all-read",
       "destination": "/api/notifications/mark-all-read"
     },
