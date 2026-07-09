@@ -1,83 +1,21 @@
 {
-  "version": 2,
-  "builds": [
+  "cleanUrls": true,
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
+      "source": "/api/notifications/mark-all-read",
+      "destination": "/api/notifications/mark-all-read"
     },
     {
-      "src": "api/**/*.ts",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/auth/register",
-      "dest": "/api/auth/register.ts"
+      "source": "/api/notifications/:id/read",
+      "destination": "/api/notifications/[id]"
     },
     {
-      "src": "/api/auth/login",
-      "dest": "/api/auth/login.ts"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     },
     {
-      "src": "/api/auth/verify-otp",
-      "dest": "/api/auth/verify-otp.ts"
-    },
-    {
-      "src": "/api/auth/request-otp",
-      "dest": "/api/auth/request-otp.ts"
-    },
-    {
-      "src": "/api/auth/reset-password",
-      "dest": "/api/auth/reset-password.ts"
-    },
-    {
-      "src": "/api/workflows",
-      "dest": "/api/workflows/index.ts"
-    },
-    {
-      "src": "/api/workflows/(.+)",
-      "dest": "/api/workflows/[id].ts"
-    },
-    {
-      "src": "/api/api-keys",
-      "dest": "/api/api-keys/index.ts"
-    },
-    {
-      "src": "/api/api-keys/(.+)",
-      "dest": "/api/api-keys/[id].ts"
-    },
-    {
-      "src": "/api/notifications",
-      "dest": "/api/notifications/index.ts"
-    },
-    {
-      "src": "/api/notifications/mark-all-read",
-      "dest": "/api/notifications/mark-all-read.ts"
-    },
-    {
-      "src": "/api/notifications/(.+)/read",
-      "dest": "/api/notifications/[id].ts"
-    },
-    {
-      "src": "/api/notifications/(.+)",
-      "dest": "/api/notifications/[id].ts"
-    },
-    {
-      "src": "/api/health",
-      "dest": "/api/health.ts"
-    },
-    {
-      "src": "/assets/(.*)",
-      "headers": { "cache-control": "public, max-age=31536000, immutable" },
-      "dest": "/assets/$1"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
