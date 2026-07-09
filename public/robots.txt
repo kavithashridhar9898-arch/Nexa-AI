@@ -1,0 +1,6 @@
+# robots.txt for Nexus AI
+User-agent: *
+Allow: /
+
+# Sitemap Link
+Sitemap: https://nexus-ai.vercel.app/sitemap.xml
