@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { db } from '../config/db';
-import { hashPassword, generateRandomId } from '../utils/crypto';
+import { db } from '../_config/db';
+import { hashPassword, generateRandomId } from '../_utils/crypto';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {

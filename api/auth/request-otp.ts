@@ -1,7 +1,7 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { db } from '../config/db';
-import { generateOtp, generateRandomId } from '../utils/crypto';
-import { sendOtpEmail } from '../services/mail.service';
+import { db } from '../_config/db';
+import { generateOtp, generateRandomId } from '../_utils/crypto';
+import { sendOtpEmail } from '../_services/mail.service';
 
 const getFormattedDate = (futureMs: number = 0) => {
   return new Date(Date.now() + futureMs).toISOString().slice(0, 19).replace('T', ' ');

@@ -1,7 +1,7 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import jwt from 'jsonwebtoken';
-import { db } from '../config/db';
-import { generateRandomId } from '../utils/crypto';
+import { db } from '../_config/db';
+import { generateRandomId } from '../_utils/crypto';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-jwt-key-for-nexus-ai-platform-2026';
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';

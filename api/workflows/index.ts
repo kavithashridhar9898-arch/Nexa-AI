@@ -1,7 +1,7 @@
 import { VercelResponse } from '@vercel/node';
-import { db } from '../config/db';
-import { withAuth, AuthenticatedRequest } from '../config/auth';
-import { generateRandomId } from '../utils/crypto';
+import { db } from '../_config/db';
+import { withAuth, AuthenticatedRequest } from '../_config/auth';
+import { generateRandomId } from '../_utils/crypto';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   const userId = req.user?.userId;
